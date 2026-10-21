@@ -552,3 +552,10 @@ This publication describes the ICML 2013 representation-learning contests, inclu
 Across the complete RTL fault campaign, most accumulator corruptions did **not** alter the CNN decision, while faults in high-impact accumulator positions—particularly the signed most-significant bit—frequently propagated to classification failures.
 
 TinyFault-FER therefore motivates **inference-aware vulnerability analysis** as a complement to conventional low-level fault analysis when evaluating reliable quantized AI accelerators.
+---
+
+## Author
+
+**Pritam K Das**  
+Email: [preeto.pritam@gmail.com](mailto:preeto.pritam@gmail.com)  
+Google Scholar: [Pritam K Das](https://scholar.google.com/citations?hl=en&user=nZ0Ys7EAAAAJ)
