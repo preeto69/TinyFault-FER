@@ -1,0 +1,17 @@
+# TinyFault-FER Quartus II 13.0 SP1 synthesis project
+# Target selected because Cyclone IV E is supported in Quartus II 13.0 SP1.
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY quartus_top
+
+set_global_assignment -name VERILOG_FILE int8_mac_accum.v
+set_global_assignment -name VERILOG_FILE quartus_top.v
+set_global_assignment -name SDC_FILE tinyfault_mac.sdc
+
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+
+# Synthesis/fitter/timing only. No physical FPGA board or pin mapping is claimed.
+
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
