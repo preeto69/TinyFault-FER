@@ -19,16 +19,16 @@ FER2013 → Compact CNN → INT8 TFLite → RTL MAC/Accumulator → Bit-Flip Fau
 
 | Metric | Result |
 |---|---:|
-| FP32 test accuracy | **63.14%** |
-| INT8 test accuracy | **62.97%** |
-| Quantization degradation | **0.17 percentage points** |
-| Validated inference seeds | **98** |
-| RTL fault injections | **21,952** |
+| FP32 test accuracy | **62.45%** |
+| INT8 test accuracy | **62.54%** |
+| INT8–FP32 accuracy difference | **+0.09 percentage points** |
+| Validated inference seeds | **100** |
+| RTL fault injections | **22,400** |
 | RTL ↔ Python accumulator verification | **Bit-exact** |
 | Clean reconstruction ↔ TFLite agreement | **100%** |
-| Overall inference decision-flip rate | **12.16%** |
+| Overall inference decision-flip rate | **12.43%** |
 | Most vulnerable accumulator bit | **Bit 31** |
-| Bit-31 decision-flip rate | **82.36%** |
+| Bit-31 decision-flip rate | **81.71%** |
 | FPGA target | **Cyclone IV E EP4CE22F17C6** |
 | Logic elements | **64** |
 | Registers | **64** |
@@ -43,9 +43,9 @@ FER2013 → Compact CNN → INT8 TFLite → RTL MAC/Accumulator → Bit-Flip Fau
 
 A compact convolutional neural network was trained for 7-class facial-expression recognition and converted to a full-integer TensorFlow Lite model.
 
-- FP32 test accuracy: **63.14%**
-- INT8 test accuracy: **62.97%**
-- Quantization degradation: **0.17 percentage points**
+- FP32 test accuracy: **62.45%**
+- INT8 test accuracy: **62.54%**
+- INT8–FP32 accuracy difference: **+0.09 percentage points**
 
 The CNN was intentionally kept compact because the primary objective is hardware fault analysis rather than architecture optimization.
 
@@ -73,34 +73,34 @@ Clean RTL accumulator outputs were compared against the Python/TFLite-derived in
 
 **Result: bit-exact accumulator agreement.**
 
-Only samples whose reconstructed clean classifier decision exactly matched the deployed TFLite model were retained, resulting in **98 validated inference seeds**.
+All **100 candidate inference seeds** produced clean reconstructed classifier decisions that exactly matched the deployed TFLite model, yielding **100% clean reconstruction agreement**.
 
 ### 4. Fault-Injection Protocol
 
-A transient single-bit fault model was applied to every position of the signed 32-bit accumulator.
+A transient single-bit fault model was applied independently to every position of the signed 32-bit accumulator.
 
 ```text
-98 inference samples
+100 inference samples
 × 7 output neurons
 × 32 accumulator bits
-= 21,952 RTL fault injections
+= 22,400 RTL fault injections
 ```
 
-A fault was considered **inference-critical** when the corrupted accumulator changed the final predicted class.
+A fault was considered **inference-critical** when the corrupted accumulator changed the final predicted class relative to the clean inference.
 
 ---
 
 ## Fault-Injection Results
 
-Across **21,952 RTL fault injections**:
+Across **22,400 RTL fault injections**:
 
-- **12.16%** changed the final inference decision.
-- **87.84%** preserved the clean decision.
+- **12.43%** changed the final inference decision.
+- **87.57%** preserved the clean decision.
 - Vulnerability varied substantially with accumulator bit position.
 - **Bit 31** was the most vulnerable location.
-- Bit-31 corruption produced an **82.36% decision-flip rate**.
+- Bit-31 corruption produced an **81.71% decision-flip rate**.
 
-The result demonstrates that numerical corruption and inference failure are not equivalent: many hardware faults are masked at the application level, while faults in numerically significant accumulator positions frequently propagate into classification errors.
+The results show that numerical corruption and inference failure are not equivalent. Many accumulator faults remain masked at the application level, while faults in numerically significant accumulator positions are substantially more likely to propagate into classification errors.
 
 ---
 
@@ -119,6 +119,8 @@ The registered MAC datapath was synthesized using **Quartus II 13.0 SP1** for an
 | Worst-case setup slack @ 100 MHz | **+4.102 ns** |
 | Worst-case registered-datapath Fmax | **169.55 MHz** |
 
+Quartus inferred the signed multiplier as an embedded multiplier resource.
+
 The reported Fmax corresponds to static timing analysis of the **registered MAC datapath**. External board-level I/O timing was not modeled.
 
 ---
@@ -134,7 +136,7 @@ This project evaluates a representative quantized neural-network arithmetic data
 - **FPGA analysis:** Quartus II synthesis and static timing
 - **Physical FPGA deployment:** not performed
 
-RTL simulation enables deterministic and repeatable testing across every accumulator bit and thousands of inference scenarios without requiring specialized physical fault-injection hardware.
+RTL simulation enables deterministic and repeatable fault injection across every accumulator bit and thousands of inference scenarios without requiring specialized physical fault-injection hardware.
 
 ---
 
