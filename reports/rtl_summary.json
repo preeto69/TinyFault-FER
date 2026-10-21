@@ -1,13 +1,13 @@
 {
-  "clean_fp32_test_accuracy": 0.6313543319702148,
-  "clean_int8_test_accuracy": 0.6296846011131726,
-  "seed_samples": 98,
+  "clean_fp32_test_accuracy": 0.6244897842407227,
+  "clean_int8_test_accuracy": 0.625417439703154,
+  "seed_samples": 100,
   "final_layer_features": 32,
   "final_layer_classes": 7,
-  "rtl_fault_injections": 21952,
+  "rtl_fault_injections": 22400,
   "rtl_python_accumulator_bit_exact": true,
   "accumulator_reconstruction_tflite_agreement": 1.0,
-  "overall_decision_flip_rate": 0.12162900874635568,
+  "overall_decision_flip_rate": 0.12433035714285715,
   "most_vulnerable_bit": 31,
-  "most_vulnerable_bit_flip_rate": 0.8236151603498543
+  "most_vulnerable_bit_flip_rate": 0.8171428571428572
 }
