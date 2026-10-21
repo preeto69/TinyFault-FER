@@ -509,7 +509,7 @@ reports/quartus_resource_summary.txt
 
 ### Dataset
 
-**FER2013 Enhanced — Hugging Face dataset mirror**
+[FER2013 Enhanced — Hugging Face](https://huggingface.co/datasets/abhilash88/fer2013-enhanced)
 
 Dataset identifier:
 
@@ -526,10 +526,6 @@ Train       25,117
 Validation   5,380
 Test         5,390
 ```
-
-### Dataset
-
-[FER2013 Enhanced — Hugging Face](https://huggingface.co/datasets/abhilash88/fer2013-enhanced)
 
 ### Original FER2013 Reference
 
