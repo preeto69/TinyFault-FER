@@ -527,12 +527,16 @@ Validation   5,380
 Test         5,390
 ```
 
+### Dataset
+
+[FER2013 Enhanced — Hugging Face](https://huggingface.co/datasets/abhilash88/fer2013-enhanced)
+
 ### Original FER2013 Reference
 
 I. J. Goodfellow et al.,  
-**“Challenges in Representation Learning: A Report on Three Machine Learning Contests,”**  
+“Challenges in Representation Learning: A Report on Three Machine Learning Contests,”  
 *Neural Networks*, vol. 64, pp. 59–63, 2015.  
-DOI: `10.1016/j.neunet.2014.09.005`
+[DOI: 10.1016/j.neunet.2014.09.005](https://doi.org/10.1016/j.neunet.2014.09.005)
 
 This publication describes the ICML 2013 representation-learning contests, including the facial-expression-recognition challenge associated with FER2013.
 
