@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use TinyFault-FER in your research, please cite this repository."
+title: "TinyFault-FER: Inference-Aware RTL Fault Injection of an INT8 CNN Accelerator Datapath"
+type: software
+
+authors:
+  - family-names: "Das"
+    given-names: "Pritam K"
+
+repository-code: "https://github.com/preeto69/TinyFault-FER"
+url: "https://github.com/preeto69/TinyFault-FER"
+
+keywords:
+  - RTL fault injection
+  - INT8 CNN
+  - quantized neural networks
+  - neural network accelerators
+  - hardware reliability
+  - FPGA
+  - TinyML
+  - SystemVerilog
+  - TensorFlow Lite
