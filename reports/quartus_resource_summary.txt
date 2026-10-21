@@ -1,0 +1,31 @@
+TinyFault-FER Quartus Synthesis Summary
+
+Tool:
+Quartus II 13.0 SP1
+
+Target Device:
+Altera Cyclone IV E EP4CE22F17C6
+
+Datapath:
+Signed INT8 x INT8 multiplier
+Signed 16-bit product
+Signed 32-bit accumulator
+Registered input/output wrapper
+
+Resource Utilization:
+Logic elements: 64
+Registers: 64
+Embedded multiplier resources: 1
+Memory bits: 0
+PLLs: 0
+
+Timing:
+Clock constraint: 100 MHz
+Worst-case setup slack: +4.102 ns
+Worst-case hold slack: +0.920 ns
+Worst-case registered-datapath Fmax: 169.55 MHz
+
+Notes:
+The reported timing corresponds to static timing analysis of the
+registered MAC datapath. External board-level I/O timing was not modeled.
+No physical FPGA deployment was performed.
