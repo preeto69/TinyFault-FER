@@ -216,5 +216,32 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# ============================================================
+# Quartus / FPGA generated files
+# ============================================================
+
+db/
+incremental_db/
+output_files/
+
+*.qws
+*.rpt
+*.smsg
+*.summary
+*.sof
+*.pof
+*.jdi
+*.pin
+*.done
+*.qdf
+
+# Icarus Verilog generated simulation files
+*.vvp
+*.vcd
+
+# OS/editor artifacts
+.DS_Store
+Thumbs.db
+
 # Streamlit
 .streamlit/secrets.toml
