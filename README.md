@@ -20,6 +20,7 @@
 
 The project connects a deployed quantized neural-network workload to an RTL fault campaign and FPGA synthesis flow, allowing hardware-level arithmetic corruption to be evaluated directly in terms of its effect on the final inference decision.
 
+**Keywords:** RTL fault injection · INT8 CNN · quantized neural networks · AI accelerator reliability · FPGA · TinyML · transient bit flips · accumulator vulnerability · TensorFlow Lite · Icarus Verilog
 ### Experimental Pipeline
 
 <div align="center">
